@@ -1,5 +1,8 @@
 # Calculator
 
+### it is the calculator build using Angular and it supports PWA ,it can do the basic mathematical operation like addition ,sub... etc
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
 
 ## Development server
