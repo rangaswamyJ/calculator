@@ -1,0 +1,72 @@
+<section class="body w3-text-white">
+    <section class=" w3-orange main-block">
+        <span class="top-right" (click)="onMemoryShowClicked()">History</span>
+        <section class="result dark w3-text-white">
+          <h3 class="w3-large">
+            {{subResult}}
+          </h3>
+          <h1 class="w3-jumbo" >
+            {{result}}
+          </h1>
+
+          <h4 class="w3-text-red" *ngIf="isError">{{err}}</h4>
+        </section>
+      
+        <section class="input">
+          <div class="w3-row">
+            <div class="w3-col s3 w3-btn light" (click)="onClear()">AC</div>
+            <div class="w3-col s3 w3-btn light" (click)="onBack()">C</div>
+            <div class="w3-col s3 w3-btn light"  (click)="onInput('%')">%</div>
+            <div class="w3-col s3 w3-btn accent" (click)="onInput('/')">/</div>
+          </div>
+
+            <div class="w3-row">
+                <div class="w3-col s3 w3-btn primary" (click)="onInput('7')">7</div>
+                <div class="w3-col s3 w3-btn primary" (click)="onInput('8')">8</div>
+                <div class="w3-col s3 w3-btn primary" (click)="onInput('9')">9</div>
+                <div class="w3-col s3 w3-btn accent" (click)="onInput('*')">x</div>
+              </div>
+              <div class="w3-row">
+                  <div class="w3-col s3 w3-btn primary" (click)="onInput('4')">4</div>
+                  <div class="w3-col s3 w3-btn primary" (click)="onInput('5')">5</div>
+                  <div class="w3-col s3 w3-btn primary" (click)="onInput('6')">6</div>
+                  <div class="w3-col s3 w3-btn accent" (click)="onInput('+')">+</div>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-col s3 w3-btn primary" (click)="onInput('1')">1</div>
+                    <div class="w3-col s3 w3-btn primary" (click)="onInput('2')">2</div>
+                    <div class="w3-col s3 w3-btn primary" (click)="onInput('3')">3</div>
+                    <div class="w3-col s3 w3-btn accent" (click)="onInput('-')">-</div>
+                  </div>
+
+                  <div class="w3-row">
+                      <div class="w3-col s3 w3-btn primary" (click)="onInput('0')">0</div>
+                      <div class="w3-col s3 w3-btn primary"  (click)="onInput('.')">.</div>
+                      <div class="w3-col s6 w3-btn light w3-card-4" (click)="evaluate()">=</div>
+                    </div>
+        </section>
+      </section>
+
+
+      <section *ngIf="isMemoryTab">
+      <section class="memory light w3-animate-top">
+        <header class="w3-header w3-padding w3-top w3-card-4 dark w3-padding-left w3-row w3-xxlarge">
+          <span class="w3-col s10 ">History</span>
+          <span class="w3-col s2" (click)="onMemoryShowClicked()">&times;</span>
+
+        </header>
+        <div class="body w3-padding">
+          <div class="w3-card-2 w3-padding" *ngFor="let m of memory ; index as i" (click)="memoryFill(i)">
+            <span>{{m.res}} = </span>
+            <span>{{ m.sRes }}</span>
+            <h3>{{m.subRes}}</h3>
+            
+          </div>
+        </div>
+        <div class="w3-btn w3-red w3-bottom" (click)="memoryClear()">Clear All</div>
+      </section>
+    
+    </section>
+      
+      
+</section>
