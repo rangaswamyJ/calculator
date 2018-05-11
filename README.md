@@ -2,6 +2,8 @@
 
 ### it is the calculator build using Angular and it supports PWA ,it can do the basic mathematical operation like addition ,sub... etc
 
+[here](https://calculator-6d37a.firebaseapp.com/) the link check it out!!
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
 
